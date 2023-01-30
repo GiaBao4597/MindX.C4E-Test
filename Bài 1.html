@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nhập vào hai số a và b ( a < b )</h1>
+    <label for="soa">Số a:</label>
+    <input type="number" name="soa" id="soa">
+    </br></br>
+    <label for="sob">Số b:</label>
+    <input type="number" name="sob" id="sob">
+    </br></br>
+    <button onclick="sum()">Tinh tổng số nguyên</button>
+    <p id ='tong'></p>
+</body>
+<script>
+    function sum() {
+        var a = parseInt(document.getElementById('soa').value);
+        var b = parseInt(document.getElementById('sob').value);
+        var tong = 0;
+        
+
+        for (let i = a; i <= b; i++) {
+            let flag = 0;
+
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (i > 1 && flag == 0) {
+                console.log (i);
+                tong += i;
+            }
+            
+        } 
+        document.getElementById('tong').innerHTML = 'Có tổng số nguyên là: ' + tong;
+
+    }
+</script>
+</html>
